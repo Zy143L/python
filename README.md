@@ -2,7 +2,7 @@
 
 ## 请无视手机上的提示升级京东版本的提示!
 
-  ### 下载连接 https://github.com/Zy143L/jd_cookie/releases
+  ### 下载链接 https://github.com/Zy143L/jd_cookie/releases
 
 **使用Python实现 代码很烂 没有做任何异常捕捉 但是能用**
 
