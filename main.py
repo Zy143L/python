@@ -1,8 +1,11 @@
-import json, qrcode
+import os
+import json
+import qrcode
 import time
 import pyperclip
 import requests
 requests.packages.urllib3.disable_warnings()
+os.environ['no_proxy'] = '*'
 
 
 def token_get():
@@ -74,16 +77,17 @@ def check_token(token, okl_token):
 
 def image_print(token):
     qrurl = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?client_type=m&appid=300&token={0}'.format(token)
-    # qr = qrcode.QRCode()
-    # qr.add_data(qrurl)
-    # invert=True
-    # qr.print_ascii(invert=True)
+    print("如果系统未弹出二维码图片, 请手动生成二维码")
+    print("URL地址已复制到剪切板, 请使用在线二维码生成")
+    print(qrurl)
+    pyperclip.copy(qrurl)
     img = qrcode.make(qrurl)
     img.show()
 
 
 if __name__ == '__main__':
-    print("Ver: 0.1 By: Limoe")
+    print("Ver: 0.2 By: limoe")
+    print("https://github.com/Zy143L/jd_cookie")
     print("JD扫码获取Cookie本地版")
     print("手机与电脑请在同一网络下!")
     print("回车生成二维码")
