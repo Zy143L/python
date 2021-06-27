@@ -1,8 +1,10 @@
-# JD扫码获取Cookie 本地版
+# JD扫码获取Cookie 支持远程扫码
 
 ## 请无视手机上的提示升级京东版本的提示!
 
-  ### 下载链接 https://github.com/Zy143L/jd_cookie/releases
+### 支持远程扫码 手机和电脑不需要在同一个网络下了
+
+ [https://github.com/Zy143L/jd_cookie/releases]()
 
 **使用Python实现 代码很烂 没有做任何异常捕捉 但是能用**
 
