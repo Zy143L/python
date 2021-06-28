@@ -99,7 +99,7 @@ def check_token(token, okl_token):
 
 
 if __name__ == '__main__':
-    logger.info("Ver: 1.0.3 By: limoe 面板专用版本")
+    logger.info("Ver: 1.0.4 By: limoe 面板专用版本")
     logger.info("https://github.com/Zy143L/jd_cookie")
     logger.info("JD扫码获取Cookie")
     i = 1
