@@ -4,6 +4,7 @@ import requests
 import logging
 requests.packages.urllib3.disable_warnings()
 
+
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
 
@@ -72,6 +73,7 @@ def check_token(token, okl_token):
     check = json.loads(res.text)
     code = check['errcode']
     message = check['message']
+    global i
     while code == 0:
         logger.info("扫码成功")
         jd_ck = s.cookies.get_dict()
@@ -81,15 +83,20 @@ def check_token(token, okl_token):
         logger.info(ck)
         break
     else:
-        logger.info(message)
-        time.sleep(3)
-        check_token(token, okl_token)
+        i = i + 1
+        if i < 60:
+            logger.info(message)
+            time.sleep(3)
+            check_token(token, okl_token)
+        else:
+            exit(0)
 
 
 if __name__ == '__main__':
-    logger.info("Ver: 1.0.2 By: limoe 面板专用版本")
+    logger.info("Ver: 1.0.3 By: limoe 面板专用版本")
     logger.info("https://github.com/Zy143L/jd_cookie")
     logger.info("JD扫码获取Cookie")
+    i = 1
     s = requests.session()
     token_get()
     exit(0)
