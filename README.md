@@ -4,6 +4,15 @@
 
 ### 支持远程扫码 手机和电脑不需要在同一个网络下了
 
+### 支持面板拉取使用 切记关掉定时! 关掉定时! 关掉定时!
+
+### 青龙面板使用如下命令, 切记定时设置为0 两次! 都要设置!
+
+```
+ql raw https://raw.githubusercontent.com/Zy143L/jd_cookie/main/jd_ck.py
+```
+
+### Windows版本下载地址
 
 > https://github.com/Zy143L/jd_cookie/releases/tag/1.0
 
