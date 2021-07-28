@@ -19,7 +19,7 @@ ql raw https://raw.githubusercontent.com/Zy143L/jd_cookie/main/jd_ck.py
 
 ### Windows版本下载地址
 
-> https://github.com/Zy143L/jd_cookie/releases/tag/1.0
+> https://github.com/Zy143L/jd_cookie/releases/tag/1.2
 
 
 **使用Python实现 代码很烂 没有做任何异常捕捉 但是能用**
