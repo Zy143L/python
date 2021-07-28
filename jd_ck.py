@@ -3,6 +3,7 @@ import time
 import requests
 import logging
 requests.packages.urllib3.disable_warnings()
+from urllib.parse import urlencode, quote_plus
 
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
@@ -48,10 +49,15 @@ def token_post(s_token):
     okl_token = c['okl_token']
     # print("okl_token:", okl_token)
     qrurl = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?client_type=m&appid=300&token={0}'.format(token)
-    logger.info("请手动复制链接到在线二维码生成网站,并扫码登录")
+    logger.info("请手动复制链接到在线二维码生成网站（cli.im）,并扫码登录")
     logger.info('')
     logger.info(qrurl)
     logger.info('')
+    logger.info('或者访问以下链接直接生成2维码图片扫码')
+    payload = {'data': qrurl}
+    result = urlencode(payload, quote_via=quote_plus)
+    logger.info('https://api.qrserver.com/v1/create-qr-code/?size=300x300&{0}'.format(result))
+
     check_token(token, okl_token)
 
 
@@ -93,7 +99,7 @@ def check_token(token, okl_token):
 
 
 if __name__ == '__main__':
-    logger.info("Ver: 1.0.3 By: limoe 面板专用版本")
+    logger.info("Ver: 1.0.4 By: limoe 面板专用版本")
     logger.info("https://github.com/Zy143L/jd_cookie")
     logger.info("JD扫码获取Cookie")
     i = 1
