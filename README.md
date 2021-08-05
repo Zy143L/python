@@ -1,6 +1,6 @@
-# V1.2版本
+# V1.3.1版本 更新时间2021年8月5日
 
-## 引入 真 · 随机 UA 感谢柠檬的思路
+## ~~引入 真 · 随机 UA 感谢柠檬的思路~~
 
 -----------
 # JD扫码获取Cookie 支持远程扫码 支持面板
@@ -19,7 +19,7 @@ ql raw https://raw.githubusercontent.com/Zy143L/jd_cookie/main/jd_ck.py
 
 ### Windows版本下载地址
 
-> https://github.com/Zy143L/jd_cookie/releases/tag/1.2
+> https://github.com/Zy143L/jd_cookie/releases
 
 
 **使用Python实现 代码很烂 没有做任何异常捕捉 但是能用**
