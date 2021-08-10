@@ -3,13 +3,12 @@ import time
 import requests
 import logging
 requests.packages.urllib3.disable_warnings()
-from urllib.parse import urlencode, quote_plus
 
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
 
-jd_ua = 'jdapp;android;10.0.5;11;{0};network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36'
+jd_ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main/1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0 TM/{0}'
 
 
 def token_get():
@@ -49,15 +48,10 @@ def token_post(s_token):
     okl_token = c['okl_token']
     # print("okl_token:", okl_token)
     qrurl = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?client_type=m&appid=300&token={0}'.format(token)
-    logger.info("请手动复制链接到在线二维码生成网站（cli.im）,并扫码登录")
+    logger.info("请手动复制链接到在线二维码生成网站,并扫码登录")
     logger.info('')
     logger.info(qrurl)
     logger.info('')
-    logger.info('或者访问以下链接直接生成2维码图片扫码')
-    payload = {'data': qrurl}
-    result = urlencode(payload, quote_via=quote_plus)
-    logger.info('https://api.qrserver.com/v1/create-qr-code/?size=300x300&{0}'.format(result))
-
     check_token(token, okl_token)
 
 
@@ -99,7 +93,7 @@ def check_token(token, okl_token):
 
 
 if __name__ == '__main__':
-    logger.info("Ver: 1.0.4 By: limoe 面板专用版本")
+    logger.info("Ver: 1.2.2 By: limoe 面板专用版本")
     logger.info("https://github.com/Zy143L/jd_cookie")
     logger.info("JD扫码获取Cookie")
     i = 1
