@@ -5,6 +5,8 @@ import time
 import pyperclip
 import requests
 import threading
+from PIL import Image
+
 requests.packages.urllib3.disable_warnings()
 os.environ['no_proxy'] = '*'
 
@@ -74,6 +76,7 @@ def check_token(token, okl_token):
     check = json.loads(res.text)
     code = check['errcode']
     message = check['message']
+    global i
     while code == 0:
         print("扫码成功")
         jd_ck = s.cookies.get_dict()
@@ -85,11 +88,7 @@ def check_token(token, okl_token):
         print("已复制到剪切板")
         break
     else:
-<<<<<<< HEAD
-        print(message)
-        time.sleep(1)
-        check_token(token, okl_token)
-=======
+
         i = i + 1
         # print(i)
         if i < 120:
@@ -98,7 +97,7 @@ def check_token(token, okl_token):
             check_token(token, okl_token)
         else:
             exit(0)
->>>>>>> 0c15127ae266524f4e52d518679d0bd93e3f9c32
+
 
 
 def image_print(token):
@@ -112,6 +111,8 @@ def image_print(token):
     try:
         img = qrcode.make(qrurl)
         img.show()
+    except Exception as e:
+        print('程序出错',e)
     except:
         print('二维码生成失败, 请手动在线生成')
         print(qrurl)
@@ -119,11 +120,10 @@ def image_print(token):
 
 if __name__ == '__main__':
     os.system('chcp 65001')
-    print("Ver: 1.3.1 By: limoe")
-    print("https://github.com/Zy143L/jd_cookie")
-    print("JD扫码获取Cookie")
+    print("JD扫码获取Cookie\n")
     print("回车生成二维码")
     input()
     s = requests.session()
+    i = 0
     token_get()
     os.system('pause')
