@@ -1,3 +1,4 @@
-# 走了走了
+# wskey转pt_key
 
-## ~等下个月再看吧~
+
+## 下载地址 [点击下载](https://github.com/Zy143L/jd_cookie/releases)
